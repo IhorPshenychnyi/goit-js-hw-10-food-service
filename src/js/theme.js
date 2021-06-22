@@ -28,13 +28,11 @@ function onCheckboxClick(event) {
 function savedThemeValue() {
     const savedTheme = localStorage.getItem('Theme');
     
-    bodyRef.classList.add(Theme.LIGHT)
-    
     if (savedTheme) {
         bodyRef.classList.add(savedTheme);
+       
         if (savedTheme === Theme.DARK) {
             checkboxRef.checked = true;
-            bodyRef.classList.remove(Theme.LIGHT);
         }
-    }
+    } else {bodyRef.classList.add(Theme.LIGHT)}
 }
